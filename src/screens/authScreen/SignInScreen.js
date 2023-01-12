@@ -1,8 +1,14 @@
-import { StyleSheet, View, Text, TextInput } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { Header } from "../../components/Header";
 import { Colors, parameters, title } from "../../globle/Styles";
 import * as animatable from "react-native-animatable";
-import { Button, Icon } from "react-native-elements";
+import { Button, Icon, SocialIcon } from "react-native-elements";
 import { useState, useRef } from "react";
 
 function SignIn() {
@@ -52,15 +58,9 @@ function SignIn() {
           <animatable.View
             animation={textInputFocused1 ? "" : "fadeInLeft"}
             duration={400}
-          >
-            <Icon
-              name="lock"
-              iconStyle={{ color: Colors.grey3 }}
-              type="material"
-            />
-          </animatable.View>
+          ></animatable.View>
           <TextInput
-            style={{ width: "80%" }}
+            style={{ width: "90%" }}
             placeholder={"Password"}
             onFocus={() => {
               setTextInputFocused1(false);
@@ -88,6 +88,36 @@ function SignIn() {
             titleStyle={parameters.buttonTitleStyle}
           />
         </View>
+        <TouchableOpacity>
+          <Text style={styles.text3}>{"Forget Password?"}</Text>
+        </TouchableOpacity>
+        <Text style={styles.text4}>{"OR"}</Text>
+      </View>
+      <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+        <SocialIcon
+          title="Login with Facebook"
+          button
+          type="facebook"
+          style={styles.SocialIcon}
+        />
+      </View>
+      <View style={{ marginHorizontal: 10, marginTop: 10 }}>
+        <SocialIcon
+          title="Login with Google"
+          button
+          type="google"
+          style={styles.SocialIcon}
+        />
+      </View>
+      <View>
+        <Text style={styles.text5}>{"New on Express Food"}</Text>
+      </View>
+      <View>
+        <Button
+          title="Create an account"
+          buttonStyle={styles.creaebutton}
+          titleStyle={styles.createButtonTitle}
+        />
       </View>
     </View>
   );
@@ -127,5 +157,45 @@ const styles = StyleSheet.create({
     alignContent: "center",
     alignItems: "center",
     paddingLeft: 15,
+  },
+  text3: {
+    fontSize: 15,
+    fontWeight: "300",
+    textDecorationLine: "underline",
+    alignSelf: "center",
+  },
+  text4: {
+    fontSize: 15,
+    fontWeight: "700",
+    alignSelf: "center",
+    marginTop: 15,
+  },
+  SocialIcon: {
+    borderRadius: 12,
+    height: 50,
+  },
+  text5: {
+    fontSize: 15,
+    fontWeight: "300",
+    textDecorationLine: "underline",
+    marginHorizontal: 20,
+    marginTop: 10,
+  },
+  creaebutton: {
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 12,
+    height: 40,
+    paddingHorizontal: 20,
+    borderColor: Colors.buttons,
+  },
+  createButtonTitle: {
+    color: Colors.buttons,
+    fontSize: 15,
+    fontWeight: "400",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 5,
   },
 });
