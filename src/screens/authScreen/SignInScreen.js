@@ -6,7 +6,8 @@ import { Icon } from "react-native-elements";
 import { useState, useRef } from "react";
 
 function SignIn() {
-  const [textInputFocused, setTextInputFocused] = useState(false);
+  const [textInputFocused1, setTextInputFocused1] = useState(false);
+  const [textInputFocused2, setTextInputFocused2] = useState(false);
   const textInput1 = useRef(1);
   const textInput2 = useRef(2);
   return (
@@ -22,16 +23,34 @@ function SignIn() {
         <Text style={styles.text1}>{"Register with your account"}</Text>
       </View>
       <View style={{ marginTop: 20 }}>
-        <View>
+        <View style={styles.textInput1}>
+          <animatable.View></animatable.View>
           <TextInput
-            style={styles.textInput1}
             placeholder={"Email"}
             ref={textInput1}
+            style={{ width: "90%" }}
+            onFocus={() => {
+              setTextInputFocused2(false);
+            }}
+            onBlur={() => {
+              setTextInputFocused2(true);
+            }}
           />
+          <animatable.View
+            animation={textInputFocused2 ? "" : "fadeInLeft"}
+            duration={400}
+            style={{ marginRight: 10 }}
+          >
+            <Icon
+              name="mail"
+              iconStyle={{ color: Colors.grey3 }}
+              type="material"
+            />
+          </animatable.View>
         </View>
         <View style={styles.textInput2}>
           <animatable.View
-            animation={textInputFocused ? "" : "fadeInLeft"}
+            animation={textInputFocused1 ? "" : "fadeInLeft"}
             duration={400}
           >
             <Icon
@@ -44,14 +63,14 @@ function SignIn() {
             style={{ width: "80%" }}
             placeholder={"Password"}
             onFocus={() => {
-              setTextInputFocused(false);
+              setTextInputFocused1(false);
             }}
             onBlur={() => {
-              setTextInputFocused(true);
+              setTextInputFocused1(true);
             }}
           />
           <animatable.View
-            animation={textInputFocused ? "" : "fadeInLeft"}
+            animation={textInputFocused1 ? "" : "fadeInLeft"}
             duration={400}
           >
             <Icon
@@ -59,7 +78,6 @@ function SignIn() {
               iconStyle={{ color: Colors.grey3 }}
               type="material"
               style={{ marginRight: 10 }}
-              // ref={textInput2}
             />
           </animatable.View>
         </View>
@@ -84,6 +102,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#86939e",
     height: 50,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignContent: "center",
+    alignItems: "center",
     paddingLeft: 15,
   },
   textInput2: {
