@@ -1,8 +1,8 @@
 import { StyleSheet, View, Text, TextInput } from "react-native";
 import { Header } from "../../components/Header";
-import { Colors, title } from "../../globle/Styles";
+import { Colors, parameters, title } from "../../globle/Styles";
 import * as animatable from "react-native-animatable";
-import { Icon } from "react-native-elements";
+import { Button, Icon } from "react-native-elements";
 import { useState, useRef } from "react";
 
 function SignIn() {
@@ -80,6 +80,13 @@ function SignIn() {
               style={{ marginRight: 10 }}
             />
           </animatable.View>
+        </View>
+        <View style={{ marginHorizontal: 20, marginVertical: 20 }}>
+          <Button
+            title={"SIGN IN"}
+            buttonStyle={parameters.buttonStyle}
+            titleStyle={parameters.buttonTitleStyle}
+          />
         </View>
       </View>
     </View>
