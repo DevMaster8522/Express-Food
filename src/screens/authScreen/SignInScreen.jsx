@@ -12,14 +12,14 @@ import * as animatable from "react-native-animatable";
 import { Button, Icon, SocialIcon } from "react-native-elements";
 import { useState, useRef } from "react";
 
-function SignIn() {
+function SignInScreen({ navigation }) {
   const [textInputFocused1, setTextInputFocused1] = useState(false);
   const [textInputFocused2, setTextInputFocused2] = useState(false);
   const textInput1 = useRef(1);
   const textInput2 = useRef(2);
   return (
     <ScrollView style={styles.container}>
-      <Header title={"SigIn"} type="arrow-left" />
+      <Header title={"SigIn"} type="arrow-left" navigation={navigation} />
       <View>
         <Text style={title}>{"Sign-In"}</Text>
       </View>
@@ -123,7 +123,7 @@ function SignIn() {
     </ScrollView>
   );
 }
-export { SignIn };
+export { SignInScreen };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
