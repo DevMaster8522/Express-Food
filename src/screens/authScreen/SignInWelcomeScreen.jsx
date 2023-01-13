@@ -1,12 +1,16 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import Swiper from "react-native-swiper";
 import { Button } from "react-native-elements";
-import { parameters, Colors } from "../../globle/Styles";
+import { Colors } from "../../globle/Styles";
 
-const SignInWelcomeScreen = () => {
+const SignInWelcomeScreen = ({ navigation }) => {
   const imageSource = require("../../../assets/Splashscreen1.png");
   const imageSource2 = require("../../../assets/Splashscreen2.png");
   const imageSource3 = require("../../../assets/Splashscreen3.png");
+
+  const goToSignIn = () => {
+    navigation.navigate("SignInScreen");
+  };
   return (
     <View style={{ flex: 1, backgroundColor: "#FF8344" }}>
       <Swiper style={styles.wrapper} showsButtons loop={true} autoplay={true}>
@@ -55,9 +59,10 @@ const SignInWelcomeScreen = () => {
       >
         <View style={{ alignItems: "flex-start" }}>
           <Button
-            title="Create an account"
+            title="Sign-In an account"
             buttonStyle={styles.createButton}
             titleStyle={styles.createButtonTitle}
+            onPress={goToSignIn}
           />
         </View>
         <View
@@ -66,7 +71,7 @@ const SignInWelcomeScreen = () => {
           }}
         >
           <Button
-            title="Sign-In an account"
+            title="Create an account"
             buttonStyle={styles.createButton1}
             titleStyle={styles.createButtonTitle1}
           />
