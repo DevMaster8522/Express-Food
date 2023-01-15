@@ -17,10 +17,11 @@ import { filterData, restaurantsData } from "../globle/Data";
 import { FoodCard } from "../components/FoodCard";
 import CountDown from "react-native-countdown-component";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const SCREEN_WIDTH = Dimensions.get("window").width;
   const [delivery, setDelivery] = useState(true);
   const [indexCheck, setIndexCheck] = useState("0");
+
   return (
     <View style={styles.container}>
       <HomeHeader />
@@ -52,6 +53,7 @@ const HomeScreen = () => {
             <TouchableOpacity
               onPress={() => {
                 setDelivery(false);
+                navigation.navigate("RestaurantMap");
               }}
             >
               <View
@@ -234,6 +236,23 @@ const HomeScreen = () => {
           ))}
         </View>
       </ScrollView>
+      {delivery && (
+        <View style={styles.floatButton}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("RestaurantMap");
+            }}
+          >
+            <Icon
+              name="place"
+              type="material"
+              size={32}
+              color={Colors.buttons}
+            />
+            <Text style={{ color: Colors.grey2 }}>Map</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };
@@ -316,5 +335,16 @@ const styles = StyleSheet.create({
   smallCardText: {
     fontWeight: "normal",
     color: Colors.grey2,
+  },
+  floatButton: {
+    position: "absolute",
+    bottom: 10,
+    right: 15,
+    backgroundColor: "white",
+    elevation: 10,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    alignItems: "center",
   },
 });
