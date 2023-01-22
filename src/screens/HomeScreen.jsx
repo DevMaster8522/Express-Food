@@ -17,7 +17,7 @@ import { filterData, restaurantsData } from "../globle/Data";
 import { FoodCard } from "../components/FoodCard";
 import CountDown from "react-native-countdown-component";
 
-const HomeScreen = ({ navigation }) => {
+function HomeScreen({ navigation }) {
   const SCREEN_WIDTH = Dimensions.get("window").width;
   const [delivery, setDelivery] = useState(true);
   const [indexCheck, setIndexCheck] = useState("0");
@@ -255,9 +255,9 @@ const HomeScreen = ({ navigation }) => {
       )}
     </View>
   );
-};
+}
 
-export default HomeScreen;
+export { HomeScreen };
 
 const styles = StyleSheet.create({
   container: {
