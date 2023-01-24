@@ -11,16 +11,13 @@ import { Colors, parameters, title } from "../../globle/Styles";
 import * as animatable from "react-native-animatable";
 import { Button, Icon, SocialIcon } from "react-native-elements";
 import { useState, useRef } from "react";
-import ClientTab from "../../Navigation/ClientTab";
+import { ClientTab } from "../../Navigation/ClientTab";
 
 function SignInScreen({ navigation }) {
   const [textInputFocused1, setTextInputFocused1] = useState(false);
   const [textInputFocused2, setTextInputFocused2] = useState(false);
   const textInput1 = useRef(1);
   const textInput2 = useRef(2);
-  const goToHome = () => {
-    navigation.navigate(ClientTab);
-  };
   return (
     <ScrollView style={styles.container}>
       <Header title={"SigIn"} type="arrow-left" navigation={navigation} />
@@ -35,7 +32,6 @@ function SignInScreen({ navigation }) {
       </View>
       <View style={{ marginTop: 20 }}>
         <View style={styles.textInput1}>
-          <animatable.View></animatable.View>
           <TextInput
             placeholder={"Email"}
             ref={textInput1}
@@ -91,7 +87,10 @@ function SignInScreen({ navigation }) {
             title={"SIGN IN"}
             buttonStyle={parameters.buttonStyle}
             titleStyle={parameters.buttonTitleStyle}
-            onPress={goToHome}
+            onPress={() => {
+              navigation.navigate(ClientTab);
+              console.log("HI");
+            }}
           />
         </View>
         <TouchableOpacity>

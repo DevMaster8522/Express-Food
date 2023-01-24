@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "react-native-elements";
-import HomeScreen from "../screens/HomeScreen";
+import { HomeScreen } from "../screens/HomeScreen";
 import SearchScreen from "../screens/SearchScreen";
 import { Colors } from "../globle/Styles";
 import MyAccountScreen from "../screens/MyAccountScreen";
 import MyOrderScreen from "../screens/MyOrderScreen";
-const ClientTab = () => {
+function ClientTab() {
   const ClientTab = createBottomTabNavigator();
 
   return (
@@ -62,8 +62,8 @@ const ClientTab = () => {
       />
     </ClientTab.Navigator>
   );
-};
+}
 
-export default ClientTab;
+export { ClientTab };
 
 const styles = StyleSheet.create({});

@@ -1,7 +1,8 @@
 import { Icon, withBadge } from "react-native-elements";
 import { StyleSheet, Text, View } from "react-native";
 import { Colors, parameters } from "../globle/Styles";
-const HomeHeader = () => {
+import MyAccountScreen from "../screens/MyAccountScreen";
+const HomeHeader = ({ navigation }) => {
   const BadgeIcon = withBadge(0)(Icon);
   return (
     <View style={styles.Header}>
@@ -17,6 +18,9 @@ const HomeHeader = () => {
           name="menu"
           color={Colors.cardbackground}
           size={32}
+          onPress={() => {
+            navigation.navigate(MyAccountScreen);
+          }}
         />
       </View>
       <View

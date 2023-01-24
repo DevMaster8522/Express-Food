@@ -24,7 +24,7 @@ function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <HomeHeader />
+      <HomeHeader navigation={navigation} />
       <ScrollView stickyHeaderIndices={[0]} showsVerticalScrollIndicator={true}>
         <View
           style={{ backgroundColor: Colors.cardbackground, paddingBottom: 5 }}

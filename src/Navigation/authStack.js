@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SignInWelcomeScreen from "../screens/authScreen/SignInWelcomeScreen";
 import { SignInScreen } from "../screens/authScreen/SignInScreen";
-import ClientTab from "./ClientTab";
 import RestuarentMapScreen from "../screens/RestaurantMap";
+import { ClientTab } from "./ClientTab";
 
 const Stack = createNativeStackNavigator();
 
