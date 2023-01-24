@@ -8,6 +8,60 @@ export const filterData = [
   { name: "Sea food", image: require("../../assets/plattes.png"), id: "6" },
 ];
 
+export const filterData2 = [
+  {
+    name: "Fast food",
+    image: require("../../assets/1.jpg"),
+    id: "0",
+  },
+  {
+    name: "Burgers",
+    image: require("../../assets/2.jpg"),
+    id: "1",
+  },
+  {
+    name: "Salads",
+    image: require("../../assets/3.jpg"),
+    id: "2",
+  },
+  {
+    name: "Hotdog",
+    image: require("../../assets/4.jpg"),
+    id: "3",
+  },
+  {
+    name: "Mexican",
+    image: require("../../assets/6.jpg"),
+    id: "5",
+  },
+  {
+    name: "Chinese",
+    image: require("../../assets/8.jpg"),
+    id: "4",
+  },
+
+  {
+    name: "Sea food",
+    image: require("../../assets/7.jpg"),
+    id: "6",
+  },
+  {
+    name: "Chinese Food",
+    image: require("../../assets/FastFood.png"),
+    id: "7",
+  },
+  {
+    name: "Mexican pie",
+    image: require("../../assets/Burger.png"),
+    id: "8",
+  },
+  {
+    name: "Ocean dish",
+    image: require("../../assets/Salad.png"),
+    id: "9",
+  },
+];
+
 export const restaurantsData = [
   {
     restaurantName: "Mc Donalds",
