@@ -6,6 +6,7 @@ import SearchScreen from "../screens/SearchScreen";
 import { Colors } from "../globle/Styles";
 import MyAccountScreen from "../screens/MyAccountScreen";
 import MyOrderScreen from "../screens/MyOrderScreen";
+import { ClientStack } from "./ClientStack";
 function ClientTab() {
   const ClientTab = createBottomTabNavigator();
 
@@ -27,8 +28,8 @@ function ClientTab() {
         }}
       />
       <ClientTab.Screen
-        name="SearchScreen"
-        component={SearchScreen}
+        name="ClientStack"
+        component={ClientStack}
         options={{
           tabBarLabel: "Search",
           headerShown: false,
