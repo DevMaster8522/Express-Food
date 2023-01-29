@@ -12,7 +12,7 @@ import SearchComponents from "../components/SearchComponents";
 import { filterData2 } from "../globle/Data";
 import { Colors } from "../globle/Styles";
 const SCREEN_WIDTH = Dimensions.get("window").width;
-const SearchScreen = () => {
+const SearchScreen = ({ navigation }) => {
   return (
     <View>
       <SearchComponents />
@@ -22,7 +22,13 @@ const SearchScreen = () => {
           data={filterData2}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("SearchResultScreen", {
+                  item: item.name,
+                });
+              }}
+            >
               <View style={styles.imageView}>
                 <ImageBackground
                   style={styles.image}
